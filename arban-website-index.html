@@ -1,0 +1,296 @@
+<title>Arban Properties</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap">
+<style>
+/* layout: full-bleed cinematic hero, then calm dark-green sections; one gold accent used for actions and rules */
+:root{--bg:#0B2118;--bg2:#10301F;--card:#143B28;--line:#24523A;--fg:#F1F5EF;--mut:#A9BFB1;--gold:#D4A017;--gold2:#F0C54A;--ink:#0B2118;
+--fd:'Barlow Condensed','Arial Narrow',sans-serif;--fb:'Source Sans 3',system-ui,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--fb);font-size:16px;line-height:1.6;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+.w{max-width:1160px;margin:0 auto}
+h1,h2,h3{font-family:var(--fd);font-weight:700;line-height:1.02;margin:0;text-wrap:balance;letter-spacing:.01em}
+h2{font-size:clamp(34px,5vw,54px)}
+h3{font-size:26px}
+.eyebrow{font:600 13px var(--fb);letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.lead{color:var(--mut);font-size:18px;max-width:62ch}
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(11,33,24,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:0 max(16px,env(safe-area-inset-left,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.nav{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 0;max-width:1160px;margin:0 auto}
+.logo{font-family:var(--fd);font-weight:700;font-size:24px;letter-spacing:.06em;text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:10px}
+.logo i{width:30px;height:30px;border:2px solid var(--gold);display:grid;place-items:center;font-style:normal;color:var(--gold);font-size:18px}
+nav{display:flex;gap:2px;flex-wrap:wrap}
+nav a{padding:8px 12px;text-decoration:none;font-weight:600;font-size:15px;border-radius:3px;color:var(--mut)}
+nav a:hover,nav a[aria-current="page"]{color:var(--fg);box-shadow:inset 0 -2px 0 var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 15px var(--fb);padding:12px 20px;border-radius:3px;border:2px solid var(--gold);background:var(--gold);color:var(--ink);text-decoration:none;cursor:pointer;min-height:44px}
+.btn:hover{background:var(--gold2);border-color:var(--gold2)}
+.btn.ghost{background:transparent;color:var(--fg)}
+.btn.ghost:hover{background:rgba(212,160,23,.14)}
+:focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
+/* hero */
+.hero{position:relative;margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));min-height:640px;display:grid;align-items:end;overflow:hidden;isolation:isolate}
+.hero svg.scene,.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,33,24,.25) 0%,rgba(11,33,24,.1) 35%,rgba(11,33,24,.92) 100%);z-index:-1}
+.hero .in{max-width:1160px;margin:0 auto;padding:90px max(16px,env(safe-area-inset-left,0px)) 40px;width:100%}
+.hero h1{font-size:clamp(52px,10vw,122px);text-transform:uppercase;max-width:12ch}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:19px;max-width:54ch;color:#E3ECE5;margin:14px 0 22px}
+.hills1{animation:drift 60s linear infinite alternate}.hills2{animation:drift 90s linear infinite alternate-reverse}
+@keyframes drift{from{transform:translateX(-2%)}to{transform:translateX(2%)}}
+@media (prefers-reduced-motion:reduce){.hills1,.hills2{animation:none}html{scroll-behavior:auto}}
+/* search */
+.search{display:grid;grid-template-columns:1.2fr 1fr 1fr auto;gap:8px;background:rgba(11,33,24,.86);border:1px solid var(--gold);padding:10px;border-radius:4px;max-width:900px}
+@media(max-width:760px){.search{grid-template-columns:1fr 1fr}.search .btn{grid-column:1/-1}}
+@media(max-width:420px){.search{grid-template-columns:1fr}}
+label.f{display:grid;gap:3px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);font-weight:600}
+select,input,textarea{font:500 15px var(--fb);color:var(--fg);background:var(--bg2);border:1px solid var(--line);border-radius:3px;padding:11px 10px;width:100%;min-height:44px}
+select option{background:var(--bg2)}
+textarea{min-height:120px;resize:vertical}
+/* sections */
+section{padding:72px 0;border-bottom:1px solid var(--line)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:30px}
+.pt{border-top:2px solid var(--gold);padding-top:14px}
+.pt p{color:var(--mut);margin:8px 0 0}
+.stack{display:grid;gap:14px;margin-top:30px}
+.svc{display:grid;grid-template-columns:70px 1fr;gap:18px;padding:22px;background:var(--bg2);border:1px solid var(--line);border-radius:4px}
+.svc b{font-family:var(--fd);font-size:44px;color:var(--gold);line-height:1}
+.svc p{margin:6px 0 0;color:var(--mut)}
+@media(max-width:520px){.svc{grid-template-columns:1fr}}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0;margin-top:30px;border:1px solid var(--line);border-radius:4px}
+.step{padding:18px;border-right:1px solid var(--line);background:var(--bg2)}
+.step:last-child{border-right:0}
+.step b{font-family:var(--fd);font-size:20px;color:var(--gold);letter-spacing:.06em}
+.step p{margin:4px 0 0;color:var(--mut);font-size:14px}
+.reels{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:26px}
+.reel{aspect-ratio:9/16;max-width:100%;border:1px solid var(--line);border-radius:14px;overflow:hidden;position:relative;background:var(--card)}
+.reel svg{position:absolute;inset:0;width:100%;height:100%}
+.reel span{position:absolute;left:10px;right:10px;bottom:10px;font:600 13px var(--fb);background:rgba(11,33,24,.75);padding:6px 8px;border-radius:3px}
+.note{font-size:13px;color:var(--mut);border:1px dashed var(--line);padding:8px 12px;border-radius:3px;display:inline-block;margin-top:14px}
+/* listings */
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:26px 0;padding:14px;background:var(--bg2);border:1px solid var(--line);border-radius:4px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
+.card .im{aspect-ratio:16/10;position:relative}
+.card .im svg{width:100%;height:100%;display:block}
+.card .bd{padding:14px;display:grid;gap:6px;flex:1}
+.card h3{font-size:24px}
+.meta{color:var(--mut);font-size:14px}
+.price{font-family:var(--fd);font-weight:700;font-size:28px;color:var(--gold2)}
+.badges{position:absolute;left:8px;top:8px;display:flex;gap:6px;flex-wrap:wrap}
+.badge{font:700 11px var(--fb);letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border-radius:2px;background:var(--gold);color:var(--ink)}
+.badge.alt{background:#E9F3EC;color:#0B2118}
+.card .btn{margin-top:6px}
+/* about / contact */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+.quote{border-left:3px solid var(--gold);padding:6px 0 6px 18px;font-size:21px;color:#E3ECE5;margin:22px 0}
+.portrait{aspect-ratio:4/5;max-width:100%;border:1px solid var(--gold);border-radius:4px;display:grid;place-items:center;text-align:center;padding:20px;background:linear-gradient(160deg,var(--card),var(--bg2));color:var(--mut)}
+.portrait b{font-family:var(--fd);font-size:34px;color:var(--fg);display:block}
+form{display:grid;gap:12px;background:var(--bg2);border:1px solid var(--line);padding:20px;border-radius:4px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.row2{grid-template-columns:1fr}}
+.chan{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.list{list-style:none;padding:0;margin:14px 0;display:grid;gap:8px}
+.list li{padding-left:22px;position:relative;color:var(--mut)}
+.list li::before{content:"";position:absolute;left:0;top:.6em;width:10px;height:2px;background:var(--gold)}
+.list b{color:var(--fg)}
+.copy{background:none;border:1px solid var(--line);color:var(--mut);font:600 12px var(--fb);padding:2px 8px;border-radius:3px;cursor:pointer;margin-left:6px}
+footer{padding:48px 0 34px;text-align:center}
+footer .tag{font-family:var(--fd);font-size:clamp(26px,5vw,40px);letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+footer p{color:var(--mut);font-size:14px;margin:10px 0 0}
+.view[hidden]{display:none}
+.empty{padding:40px;text-align:center;color:var(--mut);border:1px dashed var(--line);border-radius:4px}
+</style>
+<header><div class="nav">
+<a class="logo" href="#home" aria-label="Arban Properties home"><i>A</i>ARBAN PROPERTIES</a>
+<nav aria-label="Main"><a href="#home">Home</a><a href="#services">Services</a><a href="#listings">Listings</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+<a class="btn" id="hwa" href="#contact">WhatsApp us</a>
+</div></header>
+
+<main>
+<!-- HOME -->
+<div class="view" id="v-home">
+<div class="hero">
+<svg class="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E3B2A"/><stop offset=".45" stop-color="#2F6B45"/><stop offset=".72" stop-color="#E0A93A"/><stop offset="1" stop-color="#F3D486"/></linearGradient>
+<radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFF2C2"/><stop offset="1" stop-color="#FFF2C2" stop-opacity="0"/></radialGradient></defs>
+<rect width="1600" height="900" fill="url(#sky)"/><circle cx="1150" cy="520" r="260" fill="url(#sun)"/><circle cx="1150" cy="540" r="56" fill="#FFE8A0"/>
+<g class="hills2"><path d="M-100 600 Q200 470 480 560 T1000 540 T1700 580 V900 H-100Z" fill="#2B6A44"/></g>
+<g class="hills1"><path d="M-100 690 Q250 560 560 650 T1100 640 T1700 680 V900 H-100Z" fill="#17492F"/></g>
+<path d="M-100 790 Q300 720 700 770 T1700 760 V900 H-100Z" fill="#0F3523"/>
+<g stroke="#F0C54A" stroke-width="3" opacity=".8" fill="none"><path d="M240 900 L520 800 L900 830 L1250 790 L1500 900"/><path d="M520 800 L560 760M900 830 L930 790M1250 790 L1270 752" stroke-width="5"/></g>
+</svg>
+<div class="in">
+<div class="eyebrow">Real estate and land brokerage, Mpigi, Uganda</div>
+<h1>Trusted. Affordable. <span>Legit.</span></h1>
+<p>Verified land across Mpigi, Wakiso, Butambala, Gomba and Mityana. We inspect every plot and check every title before you pay.</p>
+<form class="search" id="hs" aria-label="Search properties" style="background:rgba(11,33,24,.86);padding:10px;border-radius:4px">
+<label class="f">Location<select id="hs-loc"><option value="">Any district</option></select></label>
+<label class="f">Size<select id="hs-size"><option value="">Any size</option></select></label>
+<label class="f">Max price<select id="hs-price"><option value="">Any price</option></select></label>
+<button class="btn" type="submit" style="align-self:end">Search properties</button></form>
+</div></div>
+<section><div class="w">
+<div class="eyebrow">Why choose us</div><h2>Buy land without second-guessing</h2>
+<p class="lead">Land fraud is the biggest fear for any buyer in Central Uganda. We built Arban Properties around one rule: nothing is paid for until it has been checked.</p>
+<div class="grid3">
+<div class="pt"><h3>We verify before you pay</h3><p>Official title search, owner identity and site inspection come first. You get a plain-language report with the risks spelled out.</p></div>
+<div class="pt"><h3>Local knowledge</h3><p>We work every week along the Masaka and Mityana highways and in Kamengo, Maya, Bubezi and Nabyewanga. We know the prices, the neighbours and the access roads.</p></div>
+<div class="pt"><h3>Built for the diaspora</h3><p>Investing from Dubai, the UAE or abroad? We film the plot, share title documents on WhatsApp, and walk you through each step so you never need to fly in to be safe.</p></div>
+<div class="pt"><h3>Affordable plots</h3><p>Honest prices, clear fees, and no unexplained "facilitation" charges. Government fees are shown separately and paid at cost.</p></div>
+<div class="pt"><h3>Proper paperwork</h3><p>Sale agreements drafted for advocate review, caveats to protect you, and full support through mutation, subdivision and transfer.</p></div>
+<div class="pt"><h3>Seen on video</h3><p>Vertical video tours let you walk the land from your phone, with boundaries, access and surroundings shown clearly.</p></div>
+</div>
+<h2 style="margin-top:64px;font-size:clamp(30px,4vw,44px)">How a safe purchase works</h2>
+<div class="steps">
+<div class="step"><b>1 SEARCH</b><p>Pick a plot or tell us what you need.</p></div>
+<div class="step"><b>2 INSPECT</b><p>Site visit: boundaries, occupants, access.</p></div>
+<div class="step"><b>3 VERIFY</b><p>Title search, owner IDs, caveats, tenure.</p></div>
+<div class="step"><b>4 AGREE</b><p>Written agreement, advocate review, witnesses.</p></div>
+<div class="step"><b>5 TRANSFER</b><p>Caveat, stamp duty, registration, your title.</p></div>
+</div>
+<h2 style="margin-top:64px;font-size:clamp(30px,4vw,44px)">Property tours, built for your phone</h2>
+<p class="lead">Short vertical videos show each plot as it really is. Drone shots show the lay of the land.</p>
+<div class="reels" id="reels"></div>
+<span class="note">Placeholders: your real tour videos go here (see the Video section in the setup notes).</span>
+</div></section>
+</div>
+
+<!-- SERVICES -->
+<div class="view" id="v-services" hidden><section><div class="w">
+<div class="eyebrow">Our services</div><h2>Everything between "I want land" and "this is my title"</h2>
+<div class="stack">
+<div class="svc"><b>01</b><div><h3>Land Sales &amp; Brokerage</h3><p>Verified, affordable plots and prime acreage across key highways (Masaka Highway, Mityana Highway) and towns like Kamengo, Maya, Bubezi, and Nabyewanga.</p></div></div>
+<div class="svc"><b>02</b><div><h3>Property Advisory &amp; Consultancy</h3><p>Expert guidance on land acquisition, market trends, and secure investment strategies.</p></div></div>
+<div class="svc"><b>03</b><div><h3>Official Land Subdivision &amp; Titling</h3><p>Full-service processing of mutation documents, surveyor data reports, and submissions to the Zonal Lands Office.</p></div></div>
+<div class="svc"><b>04</b><div><h3>Legal Documentation</h3><p>Drafting, modifying, and facilitating secure land purchase agreements.</p></div></div>
+<div class="svc"><b>05</b><div><h3>Digital Property Marketing</h3><p>Cinematic, drone-assisted video advertising and digital media promotion for property sellers.</p></div></div>
+</div>
+<p class="lead" style="margin-top:26px">Agreements are drafted for review by a licensed advocate. Government fees are shown separately on every quotation.</p>
+<p><a class="btn" href="#contact">Ask for a quotation</a></p>
+</div></section></div>
+
+<!-- LISTINGS -->
+<div class="view" id="v-listings" hidden><section><div class="w">
+<div class="eyebrow">Property listings</div><h2>Available land and properties</h2>
+<span class="note">Sample listings for layout only. Replace them with your real plots in the LISTINGS list in this file.</span>
+<div class="filters">
+<label class="f">Location<select id="f-loc"><option value="">All districts</option></select></label>
+<label class="f">Size<select id="f-size"><option value="">Any size</option></select></label>
+<label class="f">Max price<select id="f-price"><option value="">Any price</option></select></label>
+<label class="f">Status<select id="f-badge"><option value="">All</option><option>Verified Title</option><option>Ready for Transfer</option></select></label>
+<label class="f">&nbsp;<button class="btn ghost" id="f-reset" type="button">Reset filters</button></label>
+</div>
+<p class="meta" id="count" aria-live="polite"></p>
+<div class="cards" id="cards"></div>
+</div></section></div>
+
+<!-- ABOUT -->
+<div class="view" id="v-about" hidden><section><div class="w">
+<div class="eyebrow">The Arban legacy</div><h2>One standard: no plot is sold until it is proven</h2>
+<div class="two" style="margin-top:30px">
+<div>
+<p class="lead">Arban Properties was founded by Mukiza Arban with a simple vision: make buying land in Uganda safe, affordable and transparent for ordinary families and for investors abroad.</p>
+<div class="quote">"Land is a family's legacy. It should never be a gamble."<br><span class="meta">Mukiza Arban, Founder and CEO</span></div>
+<p class="lead">We are committed to eliminating real estate fraud through rigorous property inspections and strict legal compliance. Every file we handle follows the same path:</p>
+<ul class="list">
+<li><b>Official search</b> at the registry before any money moves.</li>
+<li><b>Site inspection</b> of boundaries, occupants, neighbours and access.</li>
+<li><b>Title check</b> for the real owners, tenure, caveats and mortgages. Where land is jointly owned, both owners sign.</li>
+<li><b>Written agreements</b> drafted for advocate review, with witnesses.</li>
+<li><b>Open pricing.</b> Government fees are shown separately and paid at cost.</li>
+</ul></div>
+<div class="portrait"><div><b>Mukiza Arban</b>Founder and CEO<br><br><span class="meta">Add a portrait photo here</span></div></div>
+</div>
+<div class="grid3" style="margin-top:50px">
+<div class="pt"><h3>Precision</h3><p>Exact sizes, exact boundaries, exact documents.</p></div>
+<div class="pt"><h3>Security</h3><p>Your money is protected by checks, caveats and written agreements.</p></div>
+<div class="pt"><h3>Legacy</h3><p>Titles that your children can inherit with confidence.</p></div>
+</div>
+</div></section></div>
+
+<!-- CONTACT -->
+<div class="view" id="v-contact" hidden><section><div class="w">
+<div class="eyebrow">Contact us</div><h2>Tell us what you want to buy or sell</h2>
+<div class="two" style="margin-top:30px">
+<form id="form" novalidate>
+<label class="f">I am a<select id="c-type"><option>Buyer</option><option>Seller</option><option>Diaspora investor</option></select></label>
+<div class="row2"><label class="f">Your name<input id="c-name" autocomplete="name" required></label>
+<label class="f">Phone or WhatsApp<input id="c-phone" autocomplete="tel" inputmode="tel" required></label></div>
+<label class="f">Location or plot of interest<input id="c-loc" placeholder="e.g. Kamengo, Masaka Highway"></label>
+<label class="f">Message<textarea id="c-msg" placeholder="Budget, size wanted, or the plot you want to sell"></textarea></label>
+<button class="btn" type="submit">Send on WhatsApp</button>
+<p class="meta" id="c-help" style="margin:0">This opens WhatsApp with your message ready to send.</p>
+</form>
+<div>
+<h3>Talk to us directly</h3>
+<div class="chan" id="chan"></div>
+<ul class="list">
+<li><b>Phone / WhatsApp:</b> <a href="tel:0794976980">0794 976 980</a> <button class="copy" data-copy="0794976980" type="button">Copy</button></li>
+<li><b>Email:</b> poolzugofficial@gmail.com <button class="copy" data-copy="poolzugofficial@gmail.com" type="button">Copy</button></li>
+<li><b>Email:</b> arbanconsultants@gmail.com <button class="copy" data-copy="arbanconsultants@gmail.com" type="button">Copy</button></li>
+<li><b>Office:</b> Mpigi Town Centre, Uganda</li>
+<li><b>Serving:</b> Mpigi, Wakiso, Butambala, Gomba and Mityana</li>
+</ul>
+<p class="meta">Offices that handle searches are closed on weekends, so title searches run Monday to Friday.</p>
+</div></div>
+</div></section></div>
+</main>
+
+<footer><div class="w"><div class="tag">Precision. Security. Legacy.</div><p>Arban Properties Ltd | Mpigi Town Centre, Uganda | 0794 976 980</p><p>Property details are checked before listing; always confirm title and boundaries with an advocate and surveyor before paying.</p></div></footer>
+
+<script>
+/* ---- EDIT HERE ---- */
+var PHONE='256794976980';
+var LINKS={whatsapp:'https://wa.me/'+PHONE,tiktok:'',facebook:''};   // paste your TikTok and Facebook page links
+var HERO_VIDEO='';   // optional: path to a hero video, e.g. 'hero.mp4' (muted loop)
+var LISTINGS=[   // SAMPLE data: replace with real plots
+ {t:'Roadside plot, Masaka Highway',loc:'Mpigi',area:'Kamengo',size:0.12,sz:'50 x 100 ft',price:35000000,badge:'Verified Title',hue:140},
+ {t:'Residential plot near Maya',loc:'Wakiso',area:'Maya',size:0.11,sz:'50 x 100 ft',price:28000000,badge:'Ready for Transfer',hue:90},
+ {t:'One acre, Mityana Highway',loc:'Mityana',area:'Mityana Rd',size:1,sz:'1 acre',price:45000000,badge:'Verified Title',hue:70},
+ {t:'Farmland, 2 acres',loc:'Gomba',area:'Bubezi',size:2,sz:'2 acres',price:30000000,badge:'Verified Title',hue:110},
+ {t:'Corner plot, trading centre',loc:'Butambala',area:'Gomba Rd',size:0.25,sz:'100 x 100 ft',price:22000000,badge:'Ready for Transfer',hue:50},
+ {t:'Plot near Nabyewanga',loc:'Mpigi',area:'Nabyewanga',size:0.1,sz:'50 x 100 ft',price:18000000,badge:'Verified Title',hue:160},
+ {t:'Five acres, mixed use',loc:'Gomba',area:'Maddu Rd',size:5,sz:'5 acres',price:65000000,badge:'Verified Title',hue:80},
+ {t:'Quarter-acre residential',loc:'Wakiso',area:'Off Entebbe Rd',size:0.25,sz:'100 x 100 ft',price:55000000,badge:'Ready for Transfer',hue:120}];
+/* ------------------- */
+var $=function(s){return document.querySelector(s)};
+var fmt=function(n){return 'UGX '+n.toLocaleString('en-US')};
+var SIZES=[['Up to 0.15 acre',0,0.15],['0.15 to 0.5 acre',0.15,0.5],['0.5 to 2 acres',0.5,2],['Over 2 acres',2,999]];
+var PRICES=[10000000,20000000,30000000,50000000,100000000];
+function opt(sel,vals,lab){vals.forEach(function(v,i){var o=document.createElement('option');o.value=v;o.textContent=lab?lab(v,i):v;sel.appendChild(o)})}
+var locs=[];LISTINGS.forEach(function(l){if(locs.indexOf(l.loc)<0)locs.push(l.loc)});locs.sort();
+['hs-loc','f-loc'].forEach(function(id){opt($('#'+id),locs)});
+['hs-size','f-size'].forEach(function(id){SIZES.forEach(function(s,i){var o=document.createElement('option');o.value=i;o.textContent=s[0];$('#'+id).appendChild(o)})});
+['hs-price','f-price'].forEach(function(id){opt($('#'+id),PRICES,function(v){return 'Up to '+fmt(v)})});
+function scene(h,w,hh){var g='hsl('+h+',45%,';return '<svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="g'+h+w+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#17553A"/><stop offset=".7" stop-color="#E7B64A"/><stop offset="1" stop-color="#F6D98E"/></linearGradient></defs><rect width="320" height="200" fill="url(#g'+h+w+')"/><circle cx="240" cy="92" r="16" fill="#FFE9A8"/><path d="M0 120 Q70 84 140 112 T320 104 V200H0Z" fill="'+g+'28%)"/><path d="M0 150 Q90 118 180 146 T320 140 V200H0Z" fill="'+g+'20%)"/><path d="M30 200 L110 160 L210 170 L290 150" stroke="#F0C54A" stroke-width="2" fill="none" stroke-dasharray="6 4"/></svg>'}
+$('#reels').innerHTML=['Masaka Highway','Kamengo plot','Maya acreage','Drone: Gomba'].map(function(n,i){return '<div class="reel">'+scene(70+i*25,i)+'<span>'+n+'</span></div>'}).join('');
+function card(l){return '<article class="card"><div class="im">'+scene(l.hue,l.price)+'<div class="badges"><span class="badge '+(l.badge==='Verified Title'?'':'alt')+'">'+l.badge+'</span></div></div><div class="bd"><h3>'+l.t+'</h3><div class="meta">'+l.area+', '+l.loc+' | '+l.sz+'</div><div class="price">'+fmt(l.price)+'</div><a class="btn ghost" target="_blank" rel="noopener" href="'+LINKS.whatsapp+'?text='+encodeURIComponent('Hello Arban Properties, I am interested in: '+l.t+' ('+l.loc+', '+fmt(l.price)+').')+'">Ask about this plot</a></div></article>'}
+function render(){var loc=$('#f-loc').value,sz=$('#f-size').value,pr=+$('#f-price').value||0,bd=$('#f-badge').value;
+ var r=LISTINGS.filter(function(l){return (!loc||l.loc===loc)&&(sz===''||(l.size>SIZES[sz][1]&&l.size<=SIZES[sz][2]||(+sz===0&&l.size<=0.15)))&&(!pr||l.price<=pr)&&(!bd||l.badge===bd)});
+ $('#count').textContent=r.length+' of '+LISTINGS.length+' listings';
+ $('#cards').innerHTML=r.length?r.map(card).join(''):'<div class="empty">No plots match these filters yet. Reset them, or tell us what you need and we will source it for you.</div>'}
+['f-loc','f-size','f-price','f-badge'].forEach(function(id){$('#'+id).addEventListener('change',render)});
+$('#f-reset').onclick=function(){['f-loc','f-size','f-price','f-badge'].forEach(function(id){$('#'+id).value=''});render()};
+$('#hs').addEventListener('submit',function(e){e.preventDefault();$('#f-loc').value=$('#hs-loc').value;$('#f-size').value=$('#hs-size').value;$('#f-price').value=$('#hs-price').value;$('#f-badge').value='';render();location.hash='listings'});
+var ch=$('#chan');var chans=[['WhatsApp',LINKS.whatsapp,1],['TikTok',LINKS.tiktok,0],['Facebook',LINKS.facebook,0]];
+ch.innerHTML=chans.filter(function(c){return c[1]}).map(function(c){return '<a class="btn '+(c[2]?'':'ghost')+'" target="_blank" rel="noopener" href="'+c[1]+'">'+c[0]+'</a>'}).join('');
+$('#hwa').href=LINKS.whatsapp;$('#hwa').target='_blank';$('#hwa').rel='noopener';
+document.addEventListener('click',function(e){var b=e.target.closest('.copy');if(!b)return;var t=b.getAttribute('data-copy');try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied'},function(){b.textContent='Select and copy'})}catch(x){b.textContent='Select and copy'}setTimeout(function(){b.textContent='Copy'},1800)});
+$('#form').addEventListener('submit',function(e){e.preventDefault();var n=$('#c-name').value.trim(),p=$('#c-phone').value.trim();
+ if(!n||!p){$('#c-help').textContent='Please add your name and phone number.';(n?$('#c-phone'):$('#c-name')).focus();return}
+ var m='Hello Arban Properties. I am a '+$('#c-type').value+'.\nName: '+n+'\nPhone: '+p+'\nInterest: '+($('#c-loc').value||'-')+'\n'+($('#c-msg').value||'');
+ $('#c-help').textContent='Opening WhatsApp. If nothing opens, message us on 0794 976 980.';
+ window.open(LINKS.whatsapp+'?text='+encodeURIComponent(m),'_blank')});
+if(HERO_VIDEO){var v=document.createElement('video');v.src=HERO_VIDEO;v.muted=true;v.loop=true;v.autoplay=true;v.playsInline=true;document.querySelector('.hero').insertBefore(v,document.querySelector('.hero svg.scene'))}
+var VIEWS=['home','services','listings','about','contact'];
+function route(){var h=(location.hash||'#home').slice(1);if(VIEWS.indexOf(h)<0)h='home';
+ VIEWS.forEach(function(v){$('#v-'+v).hidden=v!==h});
+ document.querySelectorAll('nav a').forEach(function(a){if(a.getAttribute('href')==='#'+h)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+ var t={home:'Arban Properties',services:'Services | Arban Properties',listings:'Listings | Arban Properties',about:'About | Arban Properties',contact:'Contact | Arban Properties'};
+ window.scrollTo(0,0)}
+window.addEventListener('hashchange',route);render();route();
+</script>
